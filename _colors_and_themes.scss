@@ -1,0 +1,12 @@
+// colors and themes
+ @mixin themes-and-colors{
+     //variables.
+    --primary-color : rgb(0,0,0) ;
+    --secondary-color : rgb(255,255,255) ;
+    --primary-border-color : rgb(112, 111, 111);
+    --secondary-border-color : rgb(209, 207, 207) ;
+    --secondary-themes : rgb(15, 18, 31) ;
+    --primary-themes :  rgb(211, 205, 205);
+    --primary-background: rgb(247, 244, 244);
+    --secondary-background: rgb(77, 76, 76);
+ }

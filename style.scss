@@ -1,0 +1,195 @@
+// custom style sheet (sass) 
+
+@import 'colors_and_themes' ;
+
+// reset default padding and margin 
+
+@import 'reset' ;
+
+//media query for device responsive .
+
+@import 'responsive' ;
+
+html{
+       @include themes-and-colors() ;
+}
+body{
+     background-color: var(--primary-themes);
+     color: var(--primary-color) !important;
+}
+// navigation bar
+nav{
+     background-color:rgb(194, 3, 3);
+     a{
+        color: rgb(236, 234, 234) !important;
+        @include mobile-responsive()        {
+            padding-left: 5px !important;
+        }
+     }
+     a.navbar-brand{
+          color: rgb(255, 253, 253);
+          font-weight: bold;
+          letter-spacing: 1px;
+     }
+     a.active{
+          opacity: 0.7;
+     }
+     div.navbar-collapse{
+         @include mobile-responsive(){
+               border-top: 1px solid rgb(253, 250, 250) !important;
+               margin-top: 7px !important;
+               padding-top: 5px !important;
+         }
+     }
+     div.custom-switch{
+        opacity: 0.7;
+     }
+}
+
+// header
+
+header{
+            h4{
+                color: rgb(221, 217, 217) !important;
+                font-size: 1.8rem;
+                        @include mobile-responsive(){
+                                        font-size: 1.4rem;
+                        }
+                            span.fa-cog{
+                                        font-size: 2rem;
+                                        color: rgb(236, 234, 234);
+                            }
+                            small{
+                                   font-size: 1.2rem;
+                            }
+            }
+    button.btn-light{
+       background-color:rgb(226, 223, 223) !important;
+       border:none;
+    }
+    div.dropdown-menu{
+          background-color: var(--primary-background);
+          a{
+            color: var(--primary-color) !important;
+            &:hover{
+                 background-color: var(--primary-themes) !important;
+            }
+            }
+    }
+}
+
+div.dashboard{
+     width: 90vw !important;
+      background: var(--primary-background);
+      h1{
+          color: var(--primary-color);
+          font-size: 1.4rem;
+          font-weight: 500 !important;
+          letter-spacing: 1px;
+          @include mobile-responsive(){
+               font-size: 1rem;
+          }
+      }
+}
+div.modal{
+       div.modal-content{
+                   color: var(--primary-color);
+                   input{
+                       background: var(--primary-background) !important;
+                       color: var(--primary-color) !important;
+                       border:none !important;
+                       font-size: 0.8rem !important;
+                   }
+                  .modal-header{
+                        background: rgb(194, 3, 3) !important;
+                        margin: 0 !important;
+                        border: none !important;
+                  }
+                  div.modal-body{
+                       font-size: 0.9rem !important;
+                       background: var(--primary-themes) !important;
+                       color: var(--primary-color) !important;
+                       
+                  }
+                  .modal-footer{
+                      background-color: var(--primary-background);
+                      color: var(--primary-color) !important;
+                      border: none !important;
+                         
+                         button{                              
+                              color: rgb(221, 217, 217);
+                         }
+                         #close-modal{
+                              background: rgb(194, 3, 3);
+                         }
+                  }
+             }
+}
+// main section.
+
+section.main-area{
+                li{
+                    background: var(--primary-background);
+                    transition: .2s;
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                }
+                li.active{
+                    background: rgb(194, 3, 3) !important;
+                    border: none !important;
+                }
+                div.progress-container{
+                    background-color: var(--primary-background);
+                                .progress{
+                                    background: var(--primary-themes) !important;
+                                }
+                }
+      div.website-overview{
+            background: var(--primary-background);
+ 
+           h6.main-header,h5{
+              background-color: rgb(194, 3, 3);
+              width: 100% !important;
+           }
+           .item{
+                background-color: var(--primary-themes);
+                font-size: 1.2rem;
+                opacity: 0.8;
+                transition: .1s;
+                &:hover{
+                    transform:scale(1.1) ;
+                    cursor: pointer;
+                }
+                span{
+                   font-size: 1.5rem;
+                }
+           }
+           .responsive-table{
+                            input{
+                                 background: var(--primary-themes) !important;
+                            }
+                           @include mobile-responsive(){
+                                 overflow-x: scroll !important;
+                          }
+                            table{
+                                background: var(--primary-background) !important;
+                                width: 90% !important;
+                                margin: 0 !important ;
+                                padding: 0 !important;
+                                        tr{
+                                            font-size: 0.9rem !important;
+                                            border:none !important;
+                                            color: var(--primary-color) !important;
+                                            @include mobile-responsive(){
+                                                font-size: 0.7rem;
+                                            }
+                                            td{
+                                                white-space: nowrap;
+                                            }
+                                        }
+                            }                          
+           }
+
+      }
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+  <title> My Posts</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin dashboard user interface">
+    <meta name = "author" content="AHMED SANI ADAMU">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <!-- ck editor script --> 
+ <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
+<!-- boostrap 4 CDN   -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>  
+<!-- custom style sheet  -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+          <nav class="navbar navbar-expand-md navbar-dark py-1">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="#">AdminStrap</a>
+
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navbar links -->
+                    <div class="collapse navbar-collapse row justify-content-between" id="collapsibleNavbar">
+                      <ul class="navbar-nav col-12 col-md-5 ml-lg-4">
+                        <li class="nav-item">
+                          <a class="nav-link" href="./index.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link " href="./pages.html">Pages</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href="./posts.html">Posts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Users</a>
+                        </li>                        
+                      </ul>
+                      <div class="navbar-right col-12 col-md-6 col-lg-5 d-md-flex justify-content-end">
+                            <ul class="navbar-nav">
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="#">Welcome, <strong>Ahmed</strong></a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="#">Logout</a>
+                                  </li>
+                                  <li class="nav-item ml-md-4">
+                                      <a class="nav-link" href="#">
+                                           <div class="custom-control custom-switch">
+                                                  <input type="checkbox" class="custom-control-input toggler" id="switch1" >
+                                                  <label class="custom-control-label" for="switch1"></label>
+                                           </div>
+                                      </a>
+                                  </li>                                  
+                                   
+                            </ul>
+                      </div>
+                    </div>
+          </nav>
+          <header class="container-fluid m-0 p-0 row py-3 bg-dark text-white justify-content-between">
+                <h4 class="col col-md-7">
+                       <span class="fas fa-pencil-alt pr-1">
+                         </span> Posts
+                         <small class="text-secondary pl-2">  add more post to your site.</small>
+                 </h4>
+                  <div class="col-md-4 d-flex justify-content-end mt-4 mt-md-0">
+                     <div class="dropdown">
+                              <button type="button" class="btn btn-light dropdown-toggle py-1 mt-2" data-toggle="dropdown">
+                                   Create Content
+                              </button>
+                              <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal">
+                                       <span class="fas fa-clone px-1" ></span>
+                                        Add Pages</a>
+                                        
+                                      <a class="dropdown-item" href="#">
+                                          <span class="fas fa-pencil-alt px-1 "></span>
+                                          Add posts
+                                          </a>
+                                      <a class="dropdown-item" href="#">
+                                       <span class="fas fa-user px-1"></span> 
+                                        Add users</a>
+                              </div>
+                       </div>
+                  </div>
+          </header>
+<!-- The Modal window  that pop up when add pages was clicked-->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header my-1 py-1">
+        <h6 class="modal-title text-white">Add page</h6>
+        <button style="color: rgb(245, 240, 240) !important ; opacity: 1 !important;" 
+                type="button" class="close" data-dismiss="modal">
+              &times;
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <label class=" font-weight-bold" for="page-title">page title</label>
+          <input type="text" id="page-title" class="form-control mb-3" placeholder="page title">
+             <label class=" font-weight-bold" for="page-body">page body</label>
+          <textarea name="editor1">
+             Add content of your pages..
+             e.g blog post , articles etc.
+          </textarea>
+         <label class=" font-weight-bold" for="page-title">Meta tags</label>
+         <input type="text" id="page-title" class="form-control mb-3" placeholder="Add Some Meta tags..">     
+         <label class=" font-weight-bold" for="page-title">Meta Description</label>
+         <input type="text" id="page-title" class="form-control mb-3" placeholder="Add some Meta description..">      
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">         
+        <button type="button" class="btn btn-success px-3 px-md-5">Save Changes</button>
+        <button type="button" class="btn px-4" id="close-modal" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+          <div class="container  my-5 dashboard py-2 rounded-lg"> 
+                <h1 class="display-6 font-weight-normal"></span> Dashboard | <small> Posts</small></h1>
+          </div>
+
+          <section style="width: 98%;" class="main-area row mt-5 justify-content-end justify-content-md-between mx-auto p-0">
+               <div class="col-12 col-md-4">
+                     <ul class="list-group">
+                          <li class="list-group-item  py-2 border-0"> 
+                              <span class="fas fa-cog"></span> Dashboard
+                          </li>
+                          <li class="list-group-item py-2 d-flex justify-content-between">
+                                     <div class="d-inline-block">
+                                       <span class="fas fa-clone px-1"></span>
+                                        Pages
+                                     </div>  
+                                      <span class=" badge badge-pill badge-dark py-2"> 15</span>                         
+                          </li>
+                          <li class="list-group-item py-2 active d-flex justify-content-between">
+                                     <div class="d-inline-block">
+                                       <span class="fas fa-pencil-alt px-1"></span>
+                                        Posts
+                                     </div>  
+                                      <span class=" badge badge-pill badge-dark py-2"> 80</span>                         
+                          </li>
+                          <li class="list-group-item py-2 d-flex justify-content-between">
+                                     <div class="d-inline-block">
+                                       <span class="fas fa-user px-1"></span>
+                                        Users
+                                     </div>  
+                                      <span class=" badge badge-pill badge-dark py-2"> 15</span>                         
+                          </li>
+                     </ul>
+               </div>
+               <div class="col-12 col-md-8 website-overview rounded-lg p-0 mt-3 mt-md-0">
+                       <h6 class="main-header py-2 pl-3 text-lowercase rounded-lg text-white">Posts</h6>
+                             <div class="responsive-table w-100">
+                                  <input style="width: 90% !important;" class="form-control mt-4 mb-2 mx-auto py-1 border-0" 
+                                         id="myInput" type="text" placeholder="Filter Posts..">
+                                   <br>
+                                        <table style="width: 100% !important" class="table table-borderless table-striped table-hover">
+                                                 <thead>
+                                                        <tr>
+                                                            <th>Title</th>
+                                                            <th>Publish</th>
+                                                            <th>Created</th>
+                                                        </tr>
+                                                 </thead>
+                                                 <tbody id="myTable">
+                                                            <tr>
+                                                                <td>Trending news</td>
+                                                                <td> <span class="fas fa-check"></span></td>
+                                                                <td>1/sept/2021</td>
+                                                                <td>
+                                                                   <a href="#"                                
+                                                                          class="btn btn-success px-4 py-1 text-white"> 
+                                                                          edit post
+                                                                    </a>
+                                                                    <button 
+                                                                        type="button"
+                                                                        class="btn btn-danger px-4 py-1 text-white ml-2">
+                                                                                delete post
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Football news</td>
+                                                                <td> <span class="fas fa-check"></span></td>
+                                                                <td>2/sept/2021</td>
+                                                                <td>
+                                                                   <a href="#"                                
+                                                                          class="btn btn-success px-4 py-1 text-white"> 
+                                                                          edit post
+                                                                    </a>
+                                                                    <button 
+                                                                        type="button"
+                                                                        class="btn btn-danger px-4 py-1 text-white ml-2">
+                                                                                delete post
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Hot Services</td>
+                                                                <td> <span class="fas fa-check"></span></td>
+                                                                <td>15/july/2018</td>
+                                                                <td>
+                                                                   <a href="#"                                
+                                                                          class="btn btn-success px-4 py-1 text-white"> 
+                                                                          edit post
+                                                                    </a>
+                                                                    <button 
+                                                                        type="button"
+                                                                        class="btn btn-danger px-4 py-1 text-white ml-2">
+                                                                                delete post
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Corona virus</td>
+                                                                <td>  <span class="fas fa-check"></span></td>
+                                                                <td>15/aug/2017</td>
+                                                                <td>
+                                                                   <a href="#"                                
+                                                                          class="btn btn-success px-4 py-1 text-white"> 
+                                                                          edit post
+                                                                    </a>
+                                                                    <button 
+                                                                        type="button"
+                                                                        class="btn btn-danger px-4 py-1 text-white ml-2">
+                                                                                delete post
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Life Style</td>
+                                                                <td> <span class="fas fa-check"></span></td>
+                                                                <td>14/feb/2014</td>
+                                                                
+                                                                <td>
+                                                                   <a href="#"                                
+                                                                          class="btn btn-success px-4 py-1 text-white"> 
+                                                                          edit post
+                                                                    </a>
+                                                                    <button 
+                                                                        type="button"
+                                                                        class="btn btn-danger px-4 py-1 text-white ml-2">
+                                                                                delete post
+                                                                    </button>
+                                                                </td>
+                                                            </tr>                                                            
+                                                  </tbody>
+                                        </table>
+                             </div>                                                                                              
+                     </div>
+               </div>
+          </section>
+          <footer class="mt-5 bg-dark py-4">
+               <p class="text-center text-secondary p-0 m-0">Copyright &copy 2021 AdminStrap <small>all right reserved</small></p>
+          </footer>
+      
+<!-- font awesome icons -->
+      <script src="https://kit.fontawesome.com/9ee600ba89.js"></script>
+ 
+   <!-- main script -->
+   <script>
+    // selector function 
+          const selectElement = function(element){
+                if(element === undefined){
+                      element = '' ;
+                  }  
+                  return document.querySelector(element) ;
+              }
+      // switch toggler function    
+          selectElement('.toggler').addEventListener('click',function(){
+                var cssProperties = {
+                //light properties
+                    primaryThemes :'rgb(211, 205, 205)' ,
+                    primaryColor :'rgb(0,0,0)' ,
+                    primaryBackground:'rgb(247, 244, 244)' ,
+                // dark properties
+                    secondaryThemes :'rgb(15, 18, 31)' ,
+                    secondaryColor : ' rgb(255,255,255)',
+                    secondaryBackground: 'rgb(40, 40, 40)',
+                }
+                // check and set new themes if toggler is clicked
+                if(this.checked){
+                      selectElement('html').style.setProperty('--primary-themes', cssProperties.secondaryThemes)
+                      selectElement('html').style.setProperty('--primary-background',cssProperties.secondaryBackground)
+                      selectElement('html').style.setProperty('--primary-color',cssProperties.secondaryColor)            
+                }
+                  else{ 
+                    // change everything back to default style.
+                      selectElement('html').style.setProperty('--primary-themes', cssProperties.primaryThemes)
+                      selectElement('html').style.setProperty('--primary-background',cssProperties.primaryBackground)
+                      selectElement('html').style.setProperty('--primary-color',cssProperties.primaryColor)   
+                  }
+          })
+
+   </script>
+   <script>
+       CKEDITOR.replace( 'editor1' );
+   </script>
+</body>
+</html>

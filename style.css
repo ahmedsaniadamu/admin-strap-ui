@@ -1,0 +1,234 @@
+body, body::after, body::before, *, *::before, *::after, html {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  --primary-color: rgb(0,0,0) ;
+  --secondary-color: rgb(255,255,255) ;
+  --primary-border-color: rgb(112, 111, 111);
+  --secondary-border-color: rgb(209, 207, 207) ;
+  --secondary-themes: rgb(15, 18, 31) ;
+  --primary-themes:  rgb(211, 205, 205);
+  --primary-background: rgb(247, 244, 244);
+  --secondary-background: rgb(77, 76, 76);
+}
+
+body {
+  background-color: var(--primary-themes);
+  color: var(--primary-color) !important;
+}
+
+nav {
+  background-color: #c20303;
+}
+
+nav a {
+  color: #eceaea !important;
+}
+
+@media screen and (max-width: 480px) {
+  nav a {
+    padding-left: 5px !important;
+  }
+}
+
+nav a.navbar-brand {
+  color: #fffdfd;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav a.active {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 480px) {
+  nav div.navbar-collapse {
+    border-top: 1px solid #fdfafa !important;
+    margin-top: 7px !important;
+    padding-top: 5px !important;
+  }
+}
+
+nav div.custom-switch {
+  opacity: 0.7;
+}
+
+header h4 {
+  color: #ddd9d9 !important;
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 480px) {
+  header h4 {
+    font-size: 1.4rem;
+  }
+}
+
+header h4 span.fa-cog {
+  font-size: 2rem;
+  color: #eceaea;
+}
+
+header h4 small {
+  font-size: 1.2rem;
+}
+
+header button.btn-light {
+  background-color: #e2dfdf !important;
+  border: none;
+}
+
+header div.dropdown-menu {
+  background-color: var(--primary-background);
+}
+
+header div.dropdown-menu a {
+  color: var(--primary-color) !important;
+}
+
+header div.dropdown-menu a:hover {
+  background-color: var(--primary-themes) !important;
+}
+
+div.dashboard {
+  width: 90vw !important;
+  background: var(--primary-background);
+}
+
+div.dashboard h1 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 500 !important;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 480px) {
+  div.dashboard h1 {
+    font-size: 1rem;
+  }
+}
+
+div.modal div.modal-content {
+  color: var(--primary-color);
+}
+
+div.modal div.modal-content input {
+  background: var(--primary-background) !important;
+  color: var(--primary-color) !important;
+  border: none !important;
+  font-size: 0.8rem !important;
+}
+
+div.modal div.modal-content .modal-header {
+  background: #c20303 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+div.modal div.modal-content div.modal-body {
+  font-size: 0.9rem !important;
+  background: var(--primary-themes) !important;
+  color: var(--primary-color) !important;
+}
+
+div.modal div.modal-content .modal-footer {
+  background-color: var(--primary-background);
+  color: var(--primary-color) !important;
+  border: none !important;
+}
+
+div.modal div.modal-content .modal-footer button {
+  color: #ddd9d9;
+}
+
+div.modal div.modal-content .modal-footer #close-modal {
+  background: #c20303;
+}
+
+section.main-area li {
+  background: var(--primary-background);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+section.main-area li:hover {
+  opacity: 0.5;
+}
+
+section.main-area li.active {
+  background: #c20303 !important;
+  border: none !important;
+}
+
+section.main-area div.progress-container {
+  background-color: var(--primary-background);
+}
+
+section.main-area div.progress-container .progress {
+  background: var(--primary-themes) !important;
+}
+
+section.main-area div.website-overview {
+  background: var(--primary-background);
+}
+
+section.main-area div.website-overview h6.main-header, section.main-area div.website-overview h5 {
+  background-color: #c20303;
+  width: 100% !important;
+}
+
+section.main-area div.website-overview .item {
+  background-color: var(--primary-themes);
+  font-size: 1.2rem;
+  opacity: 0.8;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+section.main-area div.website-overview .item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+
+section.main-area div.website-overview .item span {
+  font-size: 1.5rem;
+}
+
+section.main-area div.website-overview .responsive-table input {
+  background: var(--primary-themes) !important;
+}
+
+@media screen and (max-width: 480px) {
+  section.main-area div.website-overview .responsive-table {
+    overflow-x: scroll !important;
+  }
+}
+
+section.main-area div.website-overview .responsive-table table {
+  background: var(--primary-background) !important;
+  width: 90% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+section.main-area div.website-overview .responsive-table table tr {
+  font-size: 0.9rem !important;
+  border: none !important;
+  color: var(--primary-color) !important;
+}
+
+@media screen and (max-width: 480px) {
+  section.main-area div.website-overview .responsive-table table tr {
+    font-size: 0.7rem;
+  }
+}
+
+section.main-area div.website-overview .responsive-table table tr td {
+  white-space: nowrap;
+}
+/*# sourceMappingURL=style.css.map */
