@@ -6,5 +6,5 @@
 
    ##  Site address
 
-   https://adminstrap.netlify.app
+   https://adminstrapui.netlify.app
 
